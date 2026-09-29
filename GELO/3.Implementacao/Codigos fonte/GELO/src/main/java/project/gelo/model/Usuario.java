@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Size;
 @DiscriminatorColumn(name = "tipoUsuario", discriminatorType = DiscriminatorType.STRING)
 public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     private String nome;
     
     @Id
@@ -21,10 +21,10 @@ public class Usuario {
 
     //-------------------------------
     
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
