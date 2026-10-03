@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+  <title>Cadastro de Leitor</title>
+  <h:outputStylesheet name="estilo.css" />
+</h:head>
+<h:body>
+  <div class="topo"><h:link outcome="index" value="Projeto ESO" /></div>
+
+  <div class="caixa">
+    <h1>Cadastro de Leitor</h1>
+    <h:form>
+      <h:messages globalOnly="true" />
+      <div class="campo">
+        <h:outputLabel for="nome" value="Nome completo" />
+        <h:inputText id="nome" value="#{usuarioBean.nome}" required="true"
+                     requiredMessage="Informe o nome" />
+      </div>
+      <div class="campo">
+        <h:outputLabel for="email" value="E-mail" />
+        <h:inputText id="email" value="#{usuarioBean.email}" required="true"
+                     requiredMessage="Informe o e-mail" />
+      </div>
+      <div class="campo">
+        <h:outputLabel for="senha" value="Senha" />
+        <h:inputSecret id="senha" value="#{usuarioBean.senha}" required="true"
+                       requiredMessage="Informe a senha" />
+      </div>
+      <div class="campo">
+        <h:outputLabel for="confirmaSenha" value="Confirmar senha" />
+        <h:inputSecret id="confirmaSenha" value="#{usuarioBean.confirmaSenha}" required="true"
+                       requiredMessage="Confirme a senha" />
+      </div>
+      <h:commandButton value="Cadastrar" styleClass="botao" action="#{usuarioBean.cadastrarLeitor}" />
+    </h:form>
+    <p class="links">
+      Já tem conta? <h:link outcome="login" value="Fazer login" />
+    </p>
+  </div>
+</h:body>
+</html>

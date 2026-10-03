@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+  <title>Login</title>
+  <h:outputStylesheet name="estilo.css" />
+</h:head>
+<h:body>
+  <div class="topo"><h:link outcome="index" value="Projeto ESO" /></div>
+
+  <div class="caixa">
+    <h1>Entrar</h1>
+    <h:form>
+      <h:messages globalOnly="true" />
+      <div class="campo">
+        <h:outputLabel for="email" value="E-mail" />
+        <h:inputText id="email" value="#{usuarioBean.email}" required="true"
+                     requiredMessage="Informe o e-mail" />
+      </div>
+      <div class="campo">
+        <h:outputLabel for="senha" value="Senha" />
+        <h:inputSecret id="senha" value="#{usuarioBean.senha}" required="true"
+                       requiredMessage="Informe a senha" />
+      </div>
+      <h:commandButton value="Entrar" styleClass="botao" action="#{usuarioBean.login}" />
+    </h:form>
+    <p class="links">
+      Não tem conta? <h:link outcome="cadastro-leitor" value="Cadastre-se como leitor" /><br />
+      <h:link outcome="cadastro-admin" value="Cadastro de administrador" />
+    </p>
+  </div>
+</h:body>
+</html>
